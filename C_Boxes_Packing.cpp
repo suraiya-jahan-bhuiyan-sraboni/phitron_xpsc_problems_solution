@@ -1,19 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
-    cin>>t;
-    vector<int> v(t);
-    while (t--)
+
+    int n, a;
+    map<int, int> v;
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
     {
-       int x;
-       cin>>x;
-       v.push_back(x);
-    }  
-    int max = *max_element(v.begin(), v.end());
-    cout << count(v.begin(), v.end(), max) << endl;
+        cin >> a;
+        v[a]++;
+    }
+
+    int maxf= 0;
+    for (auto [x, y] : v)
+    {
+        maxf = max(maxf, y);
+    }
+
+    cout << maxf << endl;
+
     return 0;
 }
