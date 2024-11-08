@@ -16,7 +16,7 @@ int main()
         vector<int> p(n);
         string s;
 
-        for (int i = 0; i < n; ++i)
+        for (int i = 0; i < n; i++)
         {
             cin >> p[i];
         }
@@ -25,7 +25,7 @@ int main()
 
         vector<pair<int, int>> l, d;
 
-        for (int i = 0; i < n; ++i)
+        for (int i = 0; i < n; i++)
         {
             if (s[i] == '0')
             {
@@ -42,18 +42,18 @@ int main()
 
         vector<int> q(n);
 
-        for (int i = 0; i < d.size(); ++i)
+        for (int i = 0; i < d.size(); i++)
         {
             q[d[i].second] = i + 1;
         }
 
         int size = d.size();
-        for (int i = 0; i < l.size(); ++i)
+        for (int i = 0; i < l.size(); i++)
         {
             q[l[i].second] = size + i + 1;
         }
 
-        for (int i = 0; i < n; ++i)
+        for (int i = 0; i < n; i++)
         {
             cout << q[i] << " ";
         }
