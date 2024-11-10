@@ -6,6 +6,7 @@ int main() {
     int remaining=4-(x+y+z);
     int a=x+y*0.5;
     int b=z+y*0.5;
+    
     if(a+remaining>b){
         cout<<"Yes"<<endl;
     }else{
