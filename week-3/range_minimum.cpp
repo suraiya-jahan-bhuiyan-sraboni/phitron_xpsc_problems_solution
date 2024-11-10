@@ -11,7 +11,7 @@ int main() {
 	    for(auto&e:a){
 	        cin>>e;
 	    }
-	     sort(a.begin(), a.end());
+	sort(a.begin(), a.end());
         vector<long long> b = a;
         b.pop_back();
         b.pop_back();
