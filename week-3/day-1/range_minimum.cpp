@@ -16,7 +16,7 @@ int main() {
 		b.pop_back();
 		b.pop_back();
 		long long ans = LLONG_MAX;
-		ans = min(b.back() - b.front(), and);
+		ans = min(b.back() - b.front(), ans);
 		b = a;
 		ans = min({b.back() - b[2], b[n - 2] - b[1], ans});
 		cout << ans << "\n";
