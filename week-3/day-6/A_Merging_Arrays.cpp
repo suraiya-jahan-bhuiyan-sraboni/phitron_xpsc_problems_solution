@@ -6,22 +6,22 @@ int main() {
     cin.tie(nullptr);
     int n,m;
     cin>>n>>m;
-    vector<int>a(n),b(m),c(n+m);
-    for(auto&e:a) cin>>e;
-    for(auto&e:b) cin>>e;
-    int k=0,i=0,j=0;
-    while(i<n||j<m){
-        if((j==m||i<n)&&a[i]<b[j]){
-            c[k]=a[i];
-            i++;
-            k++;
-        }else{
-            c[k]=b[j];
-            j++;
-            k++;
-        }
+    vector<int>v1(n),v2(m),v3;
+    for(auto&e:v1) cin>>e;
+    for(auto&e:v2) cin>>e;
+    int p1 = 0, p2 = 0;
+    while (p1 < n || p2 < m)
+    {
+        if (p1 == n)
+            v3.push_back(v2[p2++]);
+        else if (p2 == m)
+            v3.push_back(v1[p1++]);
+        else if (v1[p1] < v2[p2])
+            v3.push_back(v1[p1++]);
+        else
+            v3.push_back(v2[p2++]);
     }
-    for(auto e:c){
+    for(auto e:v3){
         cout<<e<<" ";
     }
     cout<<endl;
