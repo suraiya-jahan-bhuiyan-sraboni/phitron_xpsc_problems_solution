@@ -5,28 +5,26 @@ class Solution
 public:
     int lenOfLongestSubarr(vector<int> &arr, int k)
     {
-        unordered_map<int, int>
-            prefixSumIndices;
-        int currentSum = 0, longestLength = 0;
+        unordered_map<int, int> map;
+        int sum = 0, len = 0;
 
         for (int i = 0; i < arr.size(); i++)
         {
-            currentSum += arr[i];
+            sum += arr[i];
 
-            if (currentSum == k)
-                longestLength = i + 1;
+            if (sum == k)
+                len = i + 1;
 
-            if (prefixSumIndices.find(currentSum - k) != prefixSumIndices.end())
+            if (map.find(sum - k) != map.end())
             {
-                longestLength =
-                    max(longestLength, i - prefixSumIndices[currentSum - k]);
+                len = max(len, i - map[sum - k]);
             }
 
-            if (prefixSumIndices.find(currentSum) == prefixSumIndices.end())
-                prefixSumIndices[currentSum] = i;
+            if (map.find(sum) == map.end())
+                map[sum] = i;
         }
 
-        return longestLength;
+        return len;
     }
 };
 int main() {
